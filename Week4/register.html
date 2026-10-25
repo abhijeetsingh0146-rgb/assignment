@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for web development courses and explore upcoming learning events.">
+  <meta name="theme-color" content="#2563eb">
+  <title>Register</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="register.html" aria-current="page">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Create an Account</h1>
+    <form>
+      <p>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+      </p>
+      <p>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="new-password" required>
+      </p>
+      <p>
+        <label for="birth-date">Date of birth</label>
+        <input type="date" id="birth-date" name="birth-date">
+      </p>
+      <p>
+        <label for="phone">Phone number</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </p>
+      <fieldset>
+        <legend>Preferred contact method</legend>
+        <label for="contact-email">
+          <input type="radio" id="contact-email" name="contact-method" value="email" required>
+          Email
+        </label>
+        <label for="contact-phone">
+          <input type="radio" id="contact-phone" name="contact-method" value="phone">
+          Phone
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Interests</legend>
+        <label for="interest-cricket">
+          <input type="checkbox" id="interest-cricket" name="interests" value="cricket">
+          Cricket
+        </label>
+        <label for="interest-development">
+          <input type="checkbox" id="interest-development" name="interests" value="development">
+          Web development
+        </label>
+      </fieldset>
+      <p>
+        <label for="course">Choose a course</label>
+        <select id="course" name="course">
+          <option value="">Select a course</option>
+          <option value="html-css">HTML and CSS</option>
+          <option value="java">Java</option>
+        </select>
+      </p>
+      <p>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea>
+      </p>
+      <button type="submit">Sign Up</button>
+    </form>
+    <section aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
+      <table>
+        <caption>Web development course events</caption>
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Date</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>HTML and CSS Workshop</td>
+            <td>November 5, 2026</td>
+            <td>Online</td>
+          </tr>
+          <tr>
+            <td>MERN Stack Introduction</td>
+            <td>November 12, 2026</td>
+            <td>Room 204</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">2 upcoming events</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+  </main>
+  <footer>
+    <p>Web Development Courses</p>
+  </footer>
+</body>
+</html>
