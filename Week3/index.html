@@ -18,25 +18,42 @@
 
   <main>
     <h1>Home</h1>
-    <p>Welcome to the home page.</p>
-    <img
-      src="abhijeet.jpeg"
-      alt="Profile picture of Abhijeet Singh"
-      width="200"
-    >
-    <h2>Courses</h2>
-    <ul>
-      <li>
-        MERN Stack Development
+    <section aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Welcome</h2>
+      <article>
+        <p>Welcome to the home page.</p>
+        <img
+          src="abhijeet.jpeg"
+          alt="Profile picture of Abhijeet Singh"
+          width="200"
+        >
+      </article>
+    </section>
+
+    <section aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Courses</h2>
+      <article>
+        <h3>MERN Stack Development</h3>
         <ul>
           <li>MongoDB</li>
           <li>Express.js</li>
           <li>React</li>
           <li>Node.js</li>
         </ul>
-      </li>
-      <li>HTML and CSS</li>
-    </ul>
+      </article>
+      <article>
+        <h3>HTML and CSS</h3>
+      </article>
+    </section>
+
+    <aside>
+      <h2>Learning note</h2>
+      <p>These courses cover both front-end and back-end web development.</p>
+    </aside>
   </main>
+
+  <footer>
+    <p>Week 3 learning page</p>
+  </footer>
 </body>
 </html>
