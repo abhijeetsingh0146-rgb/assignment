@@ -21,6 +21,48 @@
         <label for="password">235547</label>
         <input type="password" id="password" name="password" autocomplete="new-password" required>
       </p>
+      <p>
+        <label for="birth-date">12/07/2007</label>
+        <input type="date" id="birth-date" name="birth-date">
+      </p>
+      <p>
+        <label for="phone">6387028779</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </p>
+      <fieldset>
+        <legend>whatsapp</legend>
+        <label for="contact-email">
+          <input type="radio" id="contact-email" name="contact-method" value="email" required>
+          Email
+        </label>
+        <label for="contact-phone">
+          <input type="radio" id="contact-phone" name="contact-method" value="phone">
+          Phone
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Interests</legend>
+        <label for="interest-design">
+          <input type="checkbox" id="interest-design" name="interests" value="design">
+          cricket
+        </label>
+        <label for="interest-development">
+          <input type="checkbox" id="interest-development" name="interests" value="development">
+          Web development
+        </label>
+      </fieldset>
+      <p>
+        <label for="course">Choose a course</label>
+        <select id="course" name="course">
+          <option value="">Select a course</option>
+          <option value="html-css">HTML and CSS</option>
+          <option value="mern">java</option>
+        </select>
+      </p>
+      <p>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" cols="30"></textarea>
+      </p>
       <button type="submit">Sign Up</button>
     </form>
   </main>
