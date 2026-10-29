@@ -21,7 +21,63 @@
     body {
       min-height: 100vh;
       margin: 0;
-      padding: 32px 20px;
+      padding: 0 20px 32px;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      margin: 0 -20px 24px;
+      padding: 14px 20px;
+      border-bottom: 1px solid #cbd5e1;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgb(15 23 42 / 8%);
+    }
+
+    .top-bar-content {
+      display: flex;
+      width: min(100%, 900px);
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 auto;
+    }
+
+    .top-bar-title {
+      margin: 0;
+      color: #1d4ed8;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .top-bar-label {
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    .floating-button {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 20;
+      display: grid;
+      width: 56px;
+      height: 56px;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background-color: #1d4ed8;
+      box-shadow: 0 4px 12px rgb(15 23 42 / 25%);
+      color: #ffffff;
+      font-size: 2rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .floating-button:hover,
+    .floating-button:focus-visible {
+      background-color: #1e40af;
     }
 
     main {
@@ -103,6 +159,10 @@
     .profile-card h3 {
       margin: 0 0 4px;
       font-size: 1.1rem;
+    }
+
+    #cards-heading {
+      scroll-margin-top: 80px;
     }
 
     .profile-card p {
@@ -284,7 +344,19 @@
 
     @media (max-width: 520px) {
       body {
-        padding: 24px 12px;
+        padding: 0 12px 24px;
+      }
+
+      .top-bar {
+        margin-right: -12px;
+        margin-left: -12px;
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+
+      .floating-button {
+        right: 16px;
+        bottom: 16px;
       }
 
       .panel {
@@ -298,6 +370,12 @@
   </style>
 </head>
 <body>
+  <header class="top-bar">
+    <div class="top-bar-content">
+      <p class="top-bar-title">CSS Box Model</p>
+      <span class="top-bar-label">Week 6</span>
+    </div>
+  </header>
   <main>
     <h1>The CSS Box Model</h1>
     <p class="intro">Every element is a box made of content, padding, border, and margin. Inspect the example in DevTools to see how its dimensions are calculated.</p>
@@ -369,5 +447,6 @@
       <p class="diagram-note">Colors identify each region; the diagram is not drawn to scale.</p>
     </section>
   </main>
+  <a class="floating-button" href="#cards-heading" aria-label="Jump to profile cards">+</a>
 </body>
 </html>
