@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A mobile-first responsive layout with tablet and desktop breakpoints.">
+  <title>Week 9 · Responsive Layout</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background-color: #f1f5f9;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px 16px;
+    }
+
+    .page {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      margin-bottom: 16px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #1e3a8a;
+      color: #ffffff;
+    }
+
+    .page-header h1 {
+      margin: 0 0 8px;
+      font-size: 1.75rem;
+    }
+
+    .page-header p {
+      margin: 0;
+      color: #dbeafe;
+      line-height: 1.6;
+    }
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    .sidebar,
+    .main-content,
+    .feature-card {
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+
+    .sidebar h2,
+    .main-content h2 {
+      margin: 0 0 12px;
+      color: #1e3a8a;
+      font-size: 1.25rem;
+    }
+
+    .sidebar p,
+    .main-content p,
+    .feature-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      color: #1d4ed8;
+      font-size: 1.05rem;
+    }
+
+    .page-footer {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: #e2e8f0;
+      color: #475569;
+      text-align: center;
+    }
+
+    .page-footer p {
+      margin: 0;
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 32px 24px;
+      }
+
+      .page {
+        max-width: 960px;
+      }
+
+      .page-header {
+        margin-bottom: 20px;
+        padding: 28px;
+      }
+
+      .page-header h1 {
+        font-size: 2rem;
+      }
+
+      .content-layout {
+        grid-template-columns: minmax(200px, 1fr) minmax(0, 2fr);
+        gap: 20px;
+      }
+
+      .sidebar,
+      .main-content,
+      .feature-card {
+        padding: 24px;
+      }
+
+      .feature-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .page-footer {
+        margin-top: 20px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        padding: 48px 32px;
+      }
+
+      .page {
+        max-width: 1200px;
+      }
+
+      .page-header {
+        margin-bottom: 24px;
+        padding: 36px;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
+      }
+
+      .content-layout {
+        grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr);
+        gap: 24px;
+      }
+
+      .feature-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .page-footer {
+        margin-top: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <h1>Responsive by Design</h1>
+      <p>A mobile-first page that adapts at the 768px and 1024px breakpoints.</p>
+    </header>
+
+    <div class="content-layout">
+      <aside class="sidebar" aria-labelledby="sidebar-heading">
+        <h2 id="sidebar-heading">About this page</h2>
+        <p>Start with a simple single-column layout on phones. Wider screens gain a sidebar and additional feature columns.</p>
+      </aside>
+
+      <main class="main-content">
+        <h2>Learn at every size</h2>
+        <p>The content stays readable and organized from a narrow mobile screen to a wide desktop display.</p>
+        <div class="feature-list">
+          <article class="feature-card">
+            <h3>Mobile first</h3>
+            <p>One column keeps the layout comfortable on small screens.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Tablet ready</h3>
+            <p>At 768px, a sidebar and two feature columns make use of extra space.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Desktop refined</h3>
+            <p>At 1024px, a wider layout fits three feature columns.</p>
+          </article>
+        </div>
+      </main>
+    </div>
+
+    <footer class="page-footer">
+      <p>Week 9 · Mobile-first responsive layout</p>
+    </footer>
+  </div>
+</body>
+</html>
