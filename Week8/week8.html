@@ -46,7 +46,7 @@
 
     .grid-demo {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
     }
 
@@ -96,7 +96,6 @@
       }
 
       .grid-demo {
-        grid-template-columns: repeat(2, 1fr);
         gap: 14px;
       }
 
@@ -107,10 +106,6 @@
     }
 
     @media (max-width: 420px) {
-      .grid-demo {
-        grid-template-columns: 1fr;
-      }
-
       .grid-card {
         min-height: auto;
       }
@@ -122,24 +117,24 @@
     <h1>CSS Grid: Fractional Columns</h1>
     <p class="intro">Grid divides available space into columns. The <code>fr</code> unit shares that space proportionally, while <code>gap</code> adds room between cards.</p>
 
-    <section class="grid-demo" aria-label="Three-column CSS Grid example">
+    <section class="grid-demo" aria-label="Responsive CSS Grid example">
       <article class="grid-card">
-        <h2>Wide column · 2fr</h2>
-        <p>This column gets twice the available space of either one-fraction column.</p>
+        <h2>HTML &amp; CSS</h2>
+        <p>Structure pages and style them with responsive, accessible layouts.</p>
       </article>
       <article class="grid-card">
-        <h2>Column · 1fr</h2>
-        <p>This column takes one share of the remaining space.</p>
+        <h2>JavaScript</h2>
+        <p>Learn programming fundamentals and add interactivity to your sites.</p>
       </article>
       <article class="grid-card">
-        <h2>Column · 1fr</h2>
-        <p>This column takes the same share as the other one-fraction column.</p>
+        <h2>MERN Stack</h2>
+        <p>Explore full-stack development with MongoDB, Express, React, and Node.js.</p>
       </article>
     </section>
 
     <pre class="code-example"><code>.grid-demo {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }</code></pre>
   </main>
