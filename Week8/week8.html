@@ -125,6 +125,27 @@
       border-color: #93c5fd;
     }
 
+    .grid-card__content {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .grid-card__icon {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      place-items: center;
+      border-radius: 10px;
+      background-color: #eff6ff;
+      font-size: 1.4rem;
+    }
+
+    .grid-card__text {
+      min-width: 0;
+    }
+
     .grid-card h2 {
       margin: 0 0 10px;
       color: #1d4ed8;
@@ -209,16 +230,31 @@
     <p class="intro">This nested grid uses fractional columns and a gap. Its cards automatically reflow as the available width changes.</p>
     <section class="grid-demo" aria-label="Responsive CSS Grid example">
       <article class="grid-card">
-        <h2>HTML &amp; CSS</h2>
-        <p>Structure pages and style them with responsive, accessible layouts.</p>
+        <div class="grid-card__content">
+          <span class="grid-card__icon" aria-hidden="true">🎨</span>
+          <div class="grid-card__text">
+            <h2>HTML &amp; CSS</h2>
+            <p>Structure pages and style them with responsive, accessible layouts.</p>
+          </div>
+        </div>
       </article>
       <article class="grid-card">
-        <h2>JavaScript</h2>
-        <p>Learn programming fundamentals and add interactivity to your sites.</p>
+        <div class="grid-card__content">
+          <span class="grid-card__icon" aria-hidden="true">⚡</span>
+          <div class="grid-card__text">
+            <h2>JavaScript</h2>
+            <p>Learn programming fundamentals and add interactivity to your sites.</p>
+          </div>
+        </div>
       </article>
       <article class="grid-card">
-        <h2>MERN Stack</h2>
-        <p>Explore full-stack development with MongoDB, Express, React, and Node.js.</p>
+        <div class="grid-card__content">
+          <span class="grid-card__icon" aria-hidden="true">💻</span>
+          <div class="grid-card__text">
+            <h2>MERN Stack</h2>
+            <p>Explore full-stack development with MongoDB, Express, React, and Node.js.</p>
+          </div>
+        </div>
       </article>
     </section>
 
