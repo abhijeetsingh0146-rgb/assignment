@@ -20,21 +20,82 @@
     }
 
     body {
+      display: grid;
+      grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot";
+      grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 20px;
+      max-width: 1240px;
       min-width: 320px;
       min-height: 100vh;
-      margin: 0;
+      margin: 0 auto;
       padding: 48px 24px;
     }
 
-    main {
-      width: min(100%, 1000px);
-      margin: 0 auto;
+    .page-header {
+      grid-area: head;
+      padding: 24px;
+      border-radius: 12px;
+      background-color: #1e3a8a;
+      color: #ffffff;
+    }
+
+    .page-header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .page-header p {
+      margin: 0;
+      color: #dbeafe;
+      line-height: 1.6;
+    }
+
+    .page-sidebar {
+      grid-area: side;
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+
+    .page-sidebar h2 {
+      margin: 0 0 10px;
+      color: #1e3a8a;
+      font-size: 1.1rem;
+    }
+
+    .page-sidebar p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .page-main {
+      grid-area: main;
+      min-width: 0;
+    }
+
+    .page-footer {
+      grid-area: foot;
+      padding: 16px;
+      border-radius: 10px;
+      background-color: #e2e8f0;
+      color: #475569;
+      text-align: center;
+    }
+
+    .page-footer p {
+      margin: 0;
     }
 
     h1 {
       margin: 0 0 12px;
       color: #1e3a8a;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: 1.6rem;
     }
 
     .intro {
@@ -90,9 +151,29 @@
       font-family: Consolas, monospace;
     }
 
+    .layout-code {
+      margin-top: 16px;
+    }
+
     @media (max-width: 640px) {
       body {
+        grid-template-areas:
+          "head"
+          "main"
+          "side"
+          "foot";
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+        gap: 16px;
         padding: 32px 16px;
+      }
+
+      .page-header {
+        padding: 20px;
+      }
+
+      .page-sidebar {
+        padding: 18px;
       }
 
       .grid-demo {
@@ -113,10 +194,19 @@
   </style>
 </head>
 <body>
-  <main>
-    <h1>CSS Grid: Fractional Columns</h1>
-    <p class="intro">Grid divides available space into columns. The <code>fr</code> unit shares that space proportionally, while <code>gap</code> adds room between cards.</p>
+  <header class="page-header">
+    <h1>CSS Grid Layout</h1>
+    <p>Arrange a page into named regions with <code>grid-template-areas</code>.</p>
+  </header>
 
+  <aside class="page-sidebar" aria-labelledby="sidebar-heading">
+    <h2 id="sidebar-heading">Named areas</h2>
+    <p><strong>head</strong> holds the page heading. <strong>side</strong> contains this note. <strong>main</strong> holds the course cards. <strong>foot</strong> sits at the bottom of the layout.</p>
+  </aside>
+
+  <main class="page-main">
+    <h1>Responsive course cards</h1>
+    <p class="intro">This nested grid uses fractional columns and a gap. Its cards automatically reflow as the available width changes.</p>
     <section class="grid-demo" aria-label="Responsive CSS Grid example">
       <article class="grid-card">
         <h2>HTML &amp; CSS</h2>
@@ -137,6 +227,22 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }</code></pre>
+    <pre class="code-example layout-code"><code>body {
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "side main"
+    "foot foot";
+}
+
+.page-header { grid-area: head; }
+.page-sidebar { grid-area: side; }
+.page-main { grid-area: main; }
+.page-footer { grid-area: foot; }</code></pre>
   </main>
+
+  <footer class="page-footer">
+    <p>Week 8 · Learning CSS Grid areas</p>
+  </footer>
 </body>
 </html>
