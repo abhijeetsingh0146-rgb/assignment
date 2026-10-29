@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple responsive CSS Grid example using fractional columns and gap.">
+  <title>Week 8 · CSS Grid</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background-color: #f1f5f9;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      padding: 48px 24px;
+    }
+
+    main {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      color: #1e3a8a;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .intro {
+      margin: 0 0 28px;
+      color: #475569;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .grid-demo {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid-card {
+      min-height: 180px;
+      padding: 24px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgb(15 23 42 / 6%);
+    }
+
+    .grid-card:first-child {
+      background-color: #dbeafe;
+      border-color: #93c5fd;
+    }
+
+    .grid-card h2 {
+      margin: 0 0 10px;
+      color: #1d4ed8;
+      font-size: 1.2rem;
+    }
+
+    .grid-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .code-example {
+      overflow-x: auto;
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 10px;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 32px 16px;
+      }
+
+      .grid-demo {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+
+      .grid-card {
+        min-height: 160px;
+        padding: 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .grid-demo {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>CSS Grid: Fractional Columns</h1>
+    <p class="intro">Grid divides available space into columns. The <code>fr</code> unit shares that space proportionally, while <code>gap</code> adds room between cards.</p>
+
+    <section class="grid-demo" aria-label="Three-column CSS Grid example">
+      <article class="grid-card">
+        <h2>Wide column · 2fr</h2>
+        <p>This column gets twice the available space of either one-fraction column.</p>
+      </article>
+      <article class="grid-card">
+        <h2>Column · 1fr</h2>
+        <p>This column takes one share of the remaining space.</p>
+      </article>
+      <article class="grid-card">
+        <h2>Column · 1fr</h2>
+        <p>This column takes the same share as the other one-fraction column.</p>
+      </article>
+    </section>
+
+    <pre class="code-example"><code>.grid-demo {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}</code></pre>
+  </main>
+</body>
+</html>
