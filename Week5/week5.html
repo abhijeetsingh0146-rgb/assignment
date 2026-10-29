@@ -4,11 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My First Styled Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
     }
 
     #hero {
@@ -17,23 +21,33 @@
       place-content: center;
       gap: 20px;
       padding: 32px;
-      background-color: #f1f5f9;
-      color: #1e293b;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      background-color: #eef2ff;
+      color: #273449;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     h1 {
-      color: #2563eb;
+      color: #4338ca;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .card {
       max-width: 700px;
       padding: 24px;
       background-color: #ffffff;
-      border-left: 4px solid #2563eb;
+      color: #334155;
+      font-size: 16px;
+      line-height: 1.7;
+      border-left: 4px solid #6366f1;
       border-radius: 8px;
       box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+    }
+
+    .card p + p {
+      margin-top: 12px;
     }
   </style>
 </head>
