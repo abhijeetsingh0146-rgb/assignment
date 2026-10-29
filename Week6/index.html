@@ -60,6 +60,56 @@
       box-shadow: 0 4px 12px rgb(15 23 42 / 8%);
     }
 
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      border: 2px solid;
+      border-radius: 16px;
+    }
+
+    .profile-card--blue {
+      border-color: #2563eb;
+      background-color: #eff6ff;
+      color: #1e3a8a;
+    }
+
+    .profile-card--coral {
+      border-color: #e11d48;
+      background-color: #fff1f2;
+      color: #881337;
+    }
+
+    .avatar {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      flex: 0 0 64px;
+      place-items: center;
+      border: 3px solid currentColor;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .profile-card h3 {
+      margin: 0 0 4px;
+      font-size: 1.1rem;
+    }
+
+    .profile-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
     .example-layout {
       display: flex;
       flex-wrap: wrap;
@@ -240,6 +290,26 @@
   <main>
     <h1>The CSS Box Model</h1>
     <p class="intro">Every element is a box made of content, padding, border, and margin. Inspect the example in DevTools to see how its dimensions are calculated.</p>
+
+    <section class="panel" aria-labelledby="cards-heading">
+      <h2 id="cards-heading">Profile cards · Two color versions</h2>
+      <div class="card-grid">
+        <article class="profile-card profile-card--blue">
+          <div class="avatar" aria-hidden="true">AS</div>
+          <div>
+            <h3>Abhijeet Singh</h3>
+            <p>Web Development Student</p>
+          </div>
+        </article>
+        <article class="profile-card profile-card--coral">
+          <div class="avatar" aria-hidden="true">AS</div>
+          <div>
+            <h3>Abhijeet Singh</h3>
+            <p>Web Development Student</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <section class="panel" aria-labelledby="example-heading">
       <h2 id="example-heading">Inspect this element</h2>
