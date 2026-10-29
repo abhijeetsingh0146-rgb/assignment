@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Box Model</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background-color: #f1f5f9;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 32px 20px;
+    }
+
+    main {
+      width: min(100%, 900px);
+      margin: 0 auto;
+    }
+
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      color: #1d4ed8;
+      font-size: 2rem;
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .intro {
+      margin-bottom: 24px;
+      color: #475569;
+    }
+
+    .panel {
+      margin-bottom: 24px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgb(15 23 42 / 8%);
+    }
+
+    .example-layout {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 32px;
+    }
+
+    .demo-box {
+      display: grid;
+      width: 320px;
+      height: 180px;
+      margin: 24px;
+      padding: 24px;
+      place-items: center;
+      border: 8px solid #d6a800;
+      background-color: #bfdbfe;
+      text-align: center;
+    }
+
+    .demo-box strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #1e3a8a;
+    }
+
+    .measurements {
+      display: grid;
+      gap: 12px;
+      min-width: min(100%, 260px);
+    }
+
+    .measurement {
+      padding: 12px 16px;
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .measurement strong {
+      color: #1d4ed8;
+    }
+
+    .box-model {
+      width: min(100%, 440px);
+      margin: 20px auto 8px;
+      padding: 34px 20px 20px;
+      position: relative;
+      background: #fed7aa;
+      color: #431407;
+      text-align: center;
+    }
+
+    .box-model::before {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      content: "MARGIN · 24px";
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .diagram-border {
+      position: relative;
+      padding: 28px 10px 10px;
+      background: #fde68a;
+    }
+
+    .diagram-border::before {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      right: 0;
+      content: "BORDER · 8px";
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .diagram-padding {
+      position: relative;
+      padding: 28px 14px 14px;
+      background: #bbf7d0;
+    }
+
+    .diagram-padding::before {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+      content: "PADDING · 24px";
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .diagram-content {
+      padding: 12px 8px;
+      background: #bfdbfe;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 16px;
+      margin-top: 16px;
+      color: #334155;
+      font-size: 0.875rem;
+    }
+
+    .diagram-note {
+      margin: 12px 0 0;
+      color: #64748b;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border: 1px solid rgb(15 23 42 / 20%);
+      border-radius: 3px;
+    }
+
+    .swatch-margin {
+      background: #fed7aa;
+    }
+
+    .swatch-border {
+      background: #fde68a;
+    }
+
+    .swatch-padding {
+      background: #bbf7d0;
+    }
+
+    .swatch-content {
+      background: #bfdbfe;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 12px 0 0;
+      padding: 16px;
+      border-radius: 8px;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    code {
+      font-family: Consolas, monospace;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 24px 12px;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      .demo-box {
+        width: min(320px, 100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>The CSS Box Model</h1>
+    <p class="intro">Every element is a box made of content, padding, border, and margin. Inspect the example in DevTools to see how its dimensions are calculated.</p>
+
+    <section class="panel" aria-labelledby="example-heading">
+      <h2 id="example-heading">Inspect this element</h2>
+      <div class="example-layout">
+        <div class="demo-box">
+          <div>
+            <strong>Content area</strong>
+            <span>320px × 180px total size</span>
+          </div>
+        </div>
+        <div class="measurements">
+          <p class="measurement"><strong>box-sizing:</strong> border-box</p>
+          <p class="measurement"><strong>Width × height:</strong> 320px × 180px, including padding and border</p>
+          <p class="measurement"><strong>Padding:</strong> 24px on every side</p>
+          <p class="measurement"><strong>Border:</strong> 8px on every side</p>
+          <p class="measurement"><strong>Margin:</strong> 24px on every side, outside the box</p>
+        </div>
+      </div>
+      <pre><code>.demo-box {
+  box-sizing: border-box;
+  width: 320px;
+  height: 180px;
+  padding: 24px;
+  border: 8px solid;
+  margin: 24px;
+}</code></pre>
+    </section>
+
+    <section class="panel" aria-labelledby="diagram-heading">
+      <h2 id="diagram-heading">Box model · DevTools-style diagram</h2>
+      <div class="box-model" role="img" aria-label="Box model from outside to inside: margin, border, padding, and content">
+        <div class="diagram-border">
+          <div class="diagram-padding">
+            <div class="diagram-content">CONTENT</div>
+          </div>
+        </div>
+      </div>
+      <div class="legend" aria-label="Box model color key">
+        <span><i class="swatch swatch-margin"></i>Margin</span>
+        <span><i class="swatch swatch-border"></i>Border</span>
+        <span><i class="swatch swatch-padding"></i>Padding</span>
+        <span><i class="swatch swatch-content"></i>Content</span>
+      </div>
+      <p class="diagram-note">Colors identify each region; the diagram is not drawn to scale.</p>
+    </section>
+  </main>
+</body>
+</html>
