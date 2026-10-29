@@ -24,7 +24,7 @@
       padding: 0 20px 32px;
     }
 
-    .top-bar {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 10;
@@ -35,7 +35,7 @@
       box-shadow: 0 2px 8px rgb(15 23 42 / 8%);
     }
 
-    .top-bar-content {
+    .site-header__inner {
       display: flex;
       width: min(100%, 900px);
       align-items: center;
@@ -44,19 +44,19 @@
       margin: 0 auto;
     }
 
-    .top-bar-title {
+    .site-header__title {
       margin: 0;
       color: #1d4ed8;
       font-size: 1rem;
       font-weight: 700;
     }
 
-    .top-bar-label {
+    .site-header__label {
       color: #64748b;
       font-size: 0.875rem;
     }
 
-    .floating-button {
+    .floating-action {
       position: fixed;
       right: 24px;
       bottom: 24px;
@@ -75,8 +75,8 @@
       text-decoration: none;
     }
 
-    .floating-button:hover,
-    .floating-button:focus-visible {
+    .floating-action:hover,
+    .floating-action:focus-visible {
       background-color: #1e40af;
     }
 
@@ -102,12 +102,12 @@
       font-size: 1.15rem;
     }
 
-    .intro {
+    .page-intro {
       margin-bottom: 24px;
       color: #475569;
     }
 
-    .panel {
+    .content-panel {
       margin-bottom: 24px;
       padding: 24px;
       background: #ffffff;
@@ -116,7 +116,7 @@
       box-shadow: 0 4px 12px rgb(15 23 42 / 8%);
     }
 
-    .card-grid {
+    .profile-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
       gap: 16px;
@@ -144,7 +144,7 @@
       color: #881337;
     }
 
-    .avatar {
+    .profile-card__avatar {
       display: grid;
       width: 64px;
       height: 64px;
@@ -156,7 +156,7 @@
       font-weight: 700;
     }
 
-    .profile-card h3 {
+    .profile-card__name {
       margin: 0 0 4px;
       font-size: 1.1rem;
     }
@@ -165,23 +165,24 @@
       scroll-margin-top: 80px;
     }
 
-    .profile-card p {
+    .profile-card__role {
       margin: 0;
       font-size: 0.9rem;
     }
 
-    .profile-card .bio {
+    .profile-card__bio {
       height: 96px;
       overflow: auto;
-      margin-top: 12px;
+      margin: 12px 0 0;
       padding: 8px;
       border: 1px solid currentColor;
       border-radius: 8px;
       background-color: rgb(255 255 255 / 70%);
+      font-size: 0.9rem;
       line-height: 1.5;
     }
 
-    .example-layout {
+    .box-demo__layout {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -189,7 +190,7 @@
       gap: 32px;
     }
 
-    .demo-box {
+    .box-demo {
       display: grid;
       width: 320px;
       height: 180px;
@@ -201,25 +202,25 @@
       text-align: center;
     }
 
-    .demo-box strong {
+    .box-demo__content strong {
       display: block;
       margin-bottom: 4px;
       color: #1e3a8a;
     }
 
-    .measurements {
+    .box-demo__measurements {
       display: grid;
       gap: 12px;
       min-width: min(100%, 260px);
     }
 
-    .measurement {
+    .box-demo__measurement {
       padding: 12px 16px;
       border-radius: 8px;
       background: #f8fafc;
     }
 
-    .measurement strong {
+    .box-demo__measurement strong {
       color: #1d4ed8;
     }
 
@@ -243,13 +244,13 @@
       letter-spacing: 0.04em;
     }
 
-    .diagram-border {
+    .box-model__border {
       position: relative;
       padding: 28px 10px 10px;
       background: #fde68a;
     }
 
-    .diagram-border::before {
+    .box-model__border::before {
       position: absolute;
       top: 4px;
       left: 0;
@@ -259,13 +260,13 @@
       font-weight: 700;
     }
 
-    .diagram-padding {
+    .box-model__padding {
       position: relative;
       padding: 28px 14px 14px;
       background: #bbf7d0;
     }
 
-    .diagram-padding::before {
+    .box-model__padding::before {
       position: absolute;
       top: 5px;
       left: 0;
@@ -275,14 +276,14 @@
       font-weight: 700;
     }
 
-    .diagram-content {
+    .box-model__content {
       padding: 12px 8px;
       background: #bfdbfe;
       color: #1e3a8a;
       font-weight: 700;
     }
 
-    .legend {
+    .box-model__legend {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -292,39 +293,39 @@
       font-size: 0.875rem;
     }
 
-    .diagram-note {
+    .box-model__note {
       margin: 12px 0 0;
       color: #64748b;
       font-size: 0.875rem;
       text-align: center;
     }
 
-    .legend span {
+    .box-model__legend-item {
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .swatch {
+    .box-model__swatch {
       width: 14px;
       height: 14px;
       border: 1px solid rgb(15 23 42 / 20%);
       border-radius: 3px;
     }
 
-    .swatch-margin {
+    .box-model__swatch--margin {
       background: #fed7aa;
     }
 
-    .swatch-border {
+    .box-model__swatch--border {
       background: #fde68a;
     }
 
-    .swatch-padding {
+    .box-model__swatch--padding {
       background: #bbf7d0;
     }
 
-    .swatch-content {
+    .box-model__swatch--content {
       background: #bfdbfe;
     }
 
@@ -347,79 +348,79 @@
         padding: 0 12px 24px;
       }
 
-      .top-bar {
+      .site-header {
         margin-right: -12px;
         margin-left: -12px;
         padding-right: 12px;
         padding-left: 12px;
       }
 
-      .floating-button {
+      .floating-action {
         right: 16px;
         bottom: 16px;
       }
 
-      .panel {
+      .content-panel {
         padding: 18px;
       }
 
-      .demo-box {
+      .box-demo {
         width: min(320px, 100%);
       }
     }
   </style>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="top-bar-content">
-      <p class="top-bar-title">CSS Box Model</p>
-      <span class="top-bar-label">Week 6</span>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <p class="site-header__title">CSS Box Model</p>
+      <span class="site-header__label">Week 6</span>
     </div>
   </header>
   <main>
     <h1>The CSS Box Model</h1>
-    <p class="intro">Every element is a box made of content, padding, border, and margin. Inspect the example in DevTools to see how its dimensions are calculated.</p>
+    <p class="page-intro">Every element is a box made of content, padding, border, and margin. Inspect the example in DevTools to see how its dimensions are calculated.</p>
 
-    <section class="panel" aria-labelledby="cards-heading">
+    <section class="content-panel" aria-labelledby="cards-heading">
       <h2 id="cards-heading">Profile cards · Two color versions</h2>
-      <div class="card-grid">
+      <div class="profile-grid">
         <article class="profile-card profile-card--blue">
-          <div class="avatar" aria-hidden="true">AS</div>
-          <div class="profile-info">
-            <h3>Abhijeet Singh</h3>
-            <p>Web Development Student</p>
-            <p class="bio">I am a curious web development student who enjoys turning ideas into useful, easy-to-use websites. I am learning HTML and CSS while building a strong foundation in JavaScript and the MERN stack. Outside of coding, I enjoy cricket, exploring new technology, and working through creative challenges. My goal is to keep learning and build projects that make a positive difference.</p>
+          <div class="profile-card__avatar" aria-hidden="true">AS</div>
+          <div class="profile-card__info">
+            <h3 class="profile-card__name">Abhijeet Singh</h3>
+            <p class="profile-card__role">Web Development Student</p>
+            <p class="profile-card__bio">I am a curious web development student who enjoys turning ideas into useful, easy-to-use websites. I am learning HTML and CSS while building a strong foundation in JavaScript and the MERN stack. Outside of coding, I enjoy cricket, exploring new technology, and working through creative challenges. My goal is to keep learning and build projects that make a positive difference.</p>
           </div>
         </article>
         <article class="profile-card profile-card--coral">
-          <div class="avatar" aria-hidden="true">AS</div>
-          <div class="profile-info">
-            <h3>Abhijeet Singh</h3>
-            <p>Web Development Student</p>
-            <p class="bio">I am a curious web development student who enjoys turning ideas into useful, easy-to-use websites. I am learning HTML and CSS while building a strong foundation in JavaScript and the MERN stack. Outside of coding, I enjoy cricket, exploring new technology, and working through creative challenges. My goal is to keep learning and build projects that make a positive difference.</p>
+          <div class="profile-card__avatar" aria-hidden="true">AS</div>
+          <div class="profile-card__info">
+            <h3 class="profile-card__name">Abhijeet Singh</h3>
+            <p class="profile-card__role">Web Development Student</p>
+            <p class="profile-card__bio">I am a curious web development student who enjoys turning ideas into useful, easy-to-use websites. I am learning HTML and CSS while building a strong foundation in JavaScript and the MERN stack. Outside of coding, I enjoy cricket, exploring new technology, and working through creative challenges. My goal is to keep learning and build projects that make a positive difference.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="panel" aria-labelledby="example-heading">
+    <section class="content-panel" aria-labelledby="example-heading">
       <h2 id="example-heading">Inspect this element</h2>
-      <div class="example-layout">
-        <div class="demo-box">
-          <div>
+      <div class="box-demo__layout">
+        <div class="box-demo">
+          <div class="box-demo__content">
             <strong>Content area</strong>
             <span>320px × 180px total size</span>
           </div>
         </div>
-        <div class="measurements">
-          <p class="measurement"><strong>box-sizing:</strong> border-box</p>
-          <p class="measurement"><strong>Width × height:</strong> 320px × 180px, including padding and border</p>
-          <p class="measurement"><strong>Padding:</strong> 24px on every side</p>
-          <p class="measurement"><strong>Border:</strong> 8px on every side</p>
-          <p class="measurement"><strong>Margin:</strong> 24px on every side, outside the box</p>
+        <div class="box-demo__measurements">
+          <p class="box-demo__measurement"><strong>box-sizing:</strong> border-box</p>
+          <p class="box-demo__measurement"><strong>Width × height:</strong> 320px × 180px, including padding and border</p>
+          <p class="box-demo__measurement"><strong>Padding:</strong> 24px on every side</p>
+          <p class="box-demo__measurement"><strong>Border:</strong> 8px on every side</p>
+          <p class="box-demo__measurement"><strong>Margin:</strong> 24px on every side, outside the box</p>
         </div>
       </div>
-      <pre><code>.demo-box {
+      <pre><code>.box-demo {
   box-sizing: border-box;
   width: 320px;
   height: 180px;
@@ -429,24 +430,24 @@
 }</code></pre>
     </section>
 
-    <section class="panel" aria-labelledby="diagram-heading">
+    <section class="content-panel" aria-labelledby="diagram-heading">
       <h2 id="diagram-heading">Box model · DevTools-style diagram</h2>
       <div class="box-model" role="img" aria-label="Box model from outside to inside: margin, border, padding, and content">
-        <div class="diagram-border">
-          <div class="diagram-padding">
-            <div class="diagram-content">CONTENT</div>
+        <div class="box-model__border">
+          <div class="box-model__padding">
+            <div class="box-model__content">CONTENT</div>
           </div>
         </div>
       </div>
-      <div class="legend" aria-label="Box model color key">
-        <span><i class="swatch swatch-margin"></i>Margin</span>
-        <span><i class="swatch swatch-border"></i>Border</span>
-        <span><i class="swatch swatch-padding"></i>Padding</span>
-        <span><i class="swatch swatch-content"></i>Content</span>
+      <div class="box-model__legend" aria-label="Box model color key">
+        <span class="box-model__legend-item"><i class="box-model__swatch box-model__swatch--margin"></i>Margin</span>
+        <span class="box-model__legend-item"><i class="box-model__swatch box-model__swatch--border"></i>Border</span>
+        <span class="box-model__legend-item"><i class="box-model__swatch box-model__swatch--padding"></i>Padding</span>
+        <span class="box-model__legend-item"><i class="box-model__swatch box-model__swatch--content"></i>Content</span>
       </div>
-      <p class="diagram-note">Colors identify each region; the diagram is not drawn to scale.</p>
+      <p class="box-model__note">Colors identify each region; the diagram is not drawn to scale.</p>
     </section>
   </main>
-  <a class="floating-button" href="#cards-heading" aria-label="Jump to profile cards">+</a>
+  <a class="floating-action" href="#cards-heading" aria-label="Jump to profile cards">+</a>
 </body>
 </html>
