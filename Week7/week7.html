@@ -100,18 +100,67 @@
       padding: 96px 0;
     }
 
+    .hero-banner {
+      display: flex;
+      min-height: 420px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #dbeafe, #eef2ff);
+      text-align: center;
+    }
+
     h1 {
       margin: 0 0 16px;
       color: #1e3a8a;
       font-size: clamp(2rem, 5vw, 3.5rem);
     }
 
-    main p {
+    .hero-banner p {
       max-width: 620px;
       margin: 0;
       color: #475569;
       font-size: 1.1rem;
       line-height: 1.7;
+    }
+
+    .course-section {
+      margin-top: 48px;
+    }
+
+    .course-section h2 {
+      margin: 0 0 20px;
+      color: #1e3a8a;
+      font-size: 1.75rem;
+    }
+
+    .course-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .course-card {
+      flex: 1 1 200px;
+      padding: 24px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgb(15 23 42 / 5%);
+    }
+
+    .course-card h3 {
+      margin: 0 0 10px;
+      color: #1d4ed8;
+      font-size: 1.2rem;
+    }
+
+    .course-card p {
+      margin: 0;
+      color: #475569;
+      line-height: 1.6;
     }
 
     @media (max-width: 640px) {
@@ -143,6 +192,11 @@
         width: min(100% - 32px, 900px);
         padding: 64px 0;
       }
+
+      .hero-banner {
+        min-height: 360px;
+        padding: 40px 20px;
+      }
     }
 
     @media (max-width: 420px) {
@@ -172,9 +226,27 @@
     </nav>
   </header>
   <main id="home">
-    <h1>A clear path to new skills</h1>
-    <p id="about">Explore practical web development lessons and learn at your own pace. Browse our courses to find the right next step.</p>
-    <span id="courses"></span>
+    <section class="hero-banner" aria-labelledby="banner-heading">
+      <h1 id="banner-heading">A clear path to new skills</h1>
+      <p id="about">Explore practical web development lessons and learn at your own pace. Browse our courses to find the right next step.</p>
+    </section>
+    <section class="course-section" id="courses" aria-labelledby="courses-heading">
+      <h2 id="courses-heading">Explore our courses</h2>
+      <div class="course-cards">
+        <article class="course-card">
+          <h3>HTML &amp; CSS</h3>
+          <p>Build accessible web pages and style them with responsive layouts.</p>
+        </article>
+        <article class="course-card">
+          <h3>JavaScript</h3>
+          <p>Learn the fundamentals of programming and add interactivity to your sites.</p>
+        </article>
+        <article class="course-card">
+          <h3>MERN Stack</h3>
+          <p>Explore MongoDB, Express, React, and Node.js for full-stack development.</p>
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>
